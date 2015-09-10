@@ -10,6 +10,10 @@ date=`date '+%Y%m%d%H%M%S'`
 
 mkdir -p $BACKUP_DIR
 
+for repository in test-github test-gits3test
+
+do
+
 echo "============Backing up $repository=============="
 
 git clone --mirror https://github.com/$account/$repository.git $BACKUP_DIR/$repository.$date.git
@@ -50,5 +54,7 @@ fi
 #  echo "Error removing $repository"
 #   exit 1
 #  fi
+
+done
 
 echo "=========Succesfully backed up $repository==========="
